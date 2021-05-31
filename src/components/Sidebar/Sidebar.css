@@ -1,0 +1,35 @@
+.sidebar-container {
+  height: 100%;
+  max-width: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 10px;
+}
+
+img {
+  margin-top: 40px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 40px;
+  color: #A0A0A0;
+}
+
+.menu-item span {
+  padding-left: 15px;
+}
+
+.selected {
+  background-color: #2D9CDB !important;
+  color: white !important;
+}
+
+.items-container {
+  margin-top: 35px;
+}
