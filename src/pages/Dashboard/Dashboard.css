@@ -60,3 +60,54 @@
 .logout {
   padding-right: 20px;
 }
+
+.main-content {
+  margin: 75px 25px 0px 25px;
+}
+
+.welcome p {
+  color: #A0A0A0;
+}
+
+.information-container {
+  margin-top: 75px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.red {background-color: #EB5757;}
+.green {background-color: #6FCF97;}
+.blue {background-color: #2D9CDB;}
+
+.box {
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 350px;
+  height: 112px;
+  padding: 15px;
+  position: relative;
+  color: white;
+}
+
+.box div {
+  border-radius: 6px 0px;
+  padding: 10px;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: black;
+  font-weight: bold;
+}
+
+.charts-container {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
