@@ -111,3 +111,10 @@
   justify-content: space-evenly;
   align-items: center;
 }
+
+.ponto-seguro-label {
+  color: #2D9CDB;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}

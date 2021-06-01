@@ -34,7 +34,7 @@ const Sidebar = () => {
         <Link to="/business" style={{ textDecoration: 'none' }}>
           <div className={`menu-item ${isActive('/business') ? 'selected' : ''}`}>
             <Store />
-            <span>Estabelecimentos</span>
+            <span>Negócios</span>
           </div>
         </Link>
       </div>

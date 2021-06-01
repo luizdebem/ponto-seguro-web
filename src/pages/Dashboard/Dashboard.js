@@ -5,6 +5,7 @@ import PowerSettingsNew from '@material-ui/icons/PowerSettingsNew'
 import Search from '@material-ui/icons/Search'
 import AgressionChart from '../../assets/agressions-graph.png'
 import RobberyChart from '../../assets/robbery-graph.png'
+import logo from '../../assets/logo.png';
 
 const Dashboard = () => {
   return (
@@ -26,7 +27,10 @@ const Dashboard = () => {
           <div className="user-section">
             <span>Luiz Guilherme</span>
             <span style={{ color: '#C6C6C6', fontSize: '12px' }}>luiz.g@pontoseguro.com</span>
-            <span style={{ color: '#2D9CDB', fontSize: '12px' }}>P Ponto Seguro</span>
+            <div className="ponto-seguro-label">
+              <img src={logo} alt="ponto seguro logo" style={{ width: '12px', marginRight: '5px' }}></img>
+              <span>Ponto Seguro</span>
+            </div>
           </div>
 
           <div className="logout">
