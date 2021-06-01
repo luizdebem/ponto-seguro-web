@@ -1,0 +1,62 @@
+.dashboard-container {
+  background-color: #F4F6FB;
+  width: 100%;
+  margin: 15px 20px 15px 0px;
+  border-radius: 10px;
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  top: 18px;
+  left: 8px;
+  color: #2D9CDB;
+}
+
+.search-input {
+  width: 150px;
+  padding: 20px 0px 20px 35px;
+}
+
+.settings {
+  background-color: white;
+  color: #C6C6C6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  margin-left: auto;
+  margin-right: 32px;
+}
+
+.about-user-container {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+
+.about-user-container img {
+  width: 64px;
+}
+
+.user-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 22px 0px 22px;
+}
+
+.logout {
+  padding-right: 20px;
+}

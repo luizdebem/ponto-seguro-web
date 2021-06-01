@@ -9,7 +9,7 @@ import './Sidebar.css';
 const Sidebar = () => {
   return (
     <div className="sidebar-container">
-      <img src={logo} alt="Ponto Seguro Logo"></img>
+      <img src={logo} className="logo" alt="Ponto Seguro Logo"></img>
 
       <div className="items-container">
         <div className="menu-item">

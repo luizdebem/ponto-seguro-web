@@ -2,6 +2,7 @@
 
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Encode Sans', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,8 +11,12 @@ body {
   background-color: #FEFEFE;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body > #root > div {
-  height: 100vh;
+  height: 100vh
 }
 
 code {
