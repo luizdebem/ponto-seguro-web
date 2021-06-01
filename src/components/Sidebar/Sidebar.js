@@ -4,26 +4,39 @@ import Dashboard from '@material-ui/icons/Dashboard';
 import WarningOutlined from '@material-ui/icons/WarningOutlined';
 import Store from '@material-ui/icons/Store'
 import './Sidebar.css';
+import { Link, useLocation } from 'react-router-dom';
 
 
 const Sidebar = () => {
+  const location = useLocation();
+
+  const isActive = (routeName) => location.pathname === routeName;
+
   return (
     <div className="sidebar-container">
       <img src={logo} className="logo" alt="Ponto Seguro Logo"></img>
 
       <div className="items-container">
-        <div className="menu-item">
-          <Dashboard />
-          <span>Dashboard</span>
-        </div>
-        <div className="menu-item">
-          <WarningOutlined />
-          <span>Ocorrências</span>
-        </div>
-        <div className="menu-item">
-          <Store />
-          <span>Estabelecimentos</span>
-        </div>
+        <Link to="/dashboard" style={{ textDecoration: 'none' }}>
+          <div className={`menu-item ${isActive('/dashboard') ? 'selected' : ''}`}>
+            <Dashboard />
+            <span>Dashboard</span>
+          </div>
+        </Link>
+
+        <Link to="/reports" style={{ textDecoration: 'none' }}>
+          <div className={`menu-item ${isActive('/reports') ? 'selected' : ''}`}>
+            <WarningOutlined />
+            <span>Ocorrências</span>
+          </div>
+        </Link>
+
+        <Link to="/business" style={{ textDecoration: 'none' }}>
+          <div className={`menu-item ${isActive('/business') ? 'selected' : ''}`}>
+            <Store />
+            <span>Estabelecimentos</span>
+          </div>
+        </Link>
       </div>
     </div>
   )
