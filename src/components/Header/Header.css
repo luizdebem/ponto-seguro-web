@@ -12,6 +12,9 @@
 .search-input {
   width: 150px;
   padding: 20px 0px 20px 35px;
+  border: none;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
 }
 
 .settings {
@@ -24,6 +27,8 @@
   height: 48px;
   margin-left: auto;
   margin-right: 32px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
 }
 
 .about-user-container {
@@ -32,13 +37,18 @@
   justify-content: space-between;
   align-items: center;
   background-color: white;
+  border-radius: 0px 4px 4px 0px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .about-user-container img {
+  border-radius: 4px 0px 0px 4px;
+  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
   width: 64px;
 }
 
 .user-section {
+  position: relative;
   display: flex;
   flex-direction: column;
 }

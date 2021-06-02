@@ -20,6 +20,7 @@ const Header = () => {
       <img src="https://avatars.githubusercontent.com/u/37565843?v=4" alt="Usuário"></img>
 
       <div className="user-section">
+      <hr style={{width: '1px', height: '38px', display: 'inline-block', position: 'absolute', color: '#E0E0E0', left: '-15px' }}/>
         <span>Luiz Guilherme</span>
         <span style={{ color: '#C6C6C6', fontSize: '12px' }}>luiz.g@pontoseguro.com</span>
         <div className="ponto-seguro-label">
