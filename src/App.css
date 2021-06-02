@@ -1,3 +1,9 @@
 .App {
   display: flex
 }
+
+.leaflet-container {
+  margin: 50px;
+  width: 100wh; 
+  height: 100vh;
+}

@@ -7,6 +7,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import MainContent from './components/MainContent/MainContent';
+import Business from './pages/Business/Business';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Switch>
           <Redirect exact from="/" to="/dashboard" />
           <Dashboard path="/dashboard" />
+          <Business path="/business" />
         </Switch>
         </MainContent>
       </Router>
