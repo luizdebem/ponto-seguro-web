@@ -1,0 +1,24 @@
+.table-container {
+  background-color: #FEFEFE;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 9px;
+  margin: 25px;
+  padding: 25px;
+  margin-bottom: 225px;
+}
+
+.table-container table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+.table-container .table-head, .table-container .table-body {
+  border-bottom: 2px solid #F4F6FB;
+}
+
+.table-container p {
+  font-size: 20px;
+  margin-bottom: 35px;
+  margin-top: 0px;
+}
