@@ -51,6 +51,8 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  align-self: stretch;
+  justify-content: space-evenly;
 }
 
 .dashboard-header {

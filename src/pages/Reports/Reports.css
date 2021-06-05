@@ -22,3 +22,26 @@
   margin-bottom: 35px;
   margin-top: 0px;
 }
+
+.table-head th {
+  font-weight: normal;
+  color: #C6C6C6;
+  padding-bottom: 15px;
+  font-size: 12px;
+}
+
+.table-body td {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-size: 14px;
+}
+
+.user-type-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.user-type-label {
+  padding-left: 10px;
+}

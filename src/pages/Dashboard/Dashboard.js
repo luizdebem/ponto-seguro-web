@@ -8,32 +8,32 @@ const Dashboard = () => {
     <>
       <main className="main-content">
         <div className="welcome">
-          <h1>Olá, Luiz Guilherme</h1>
-          <p>Estas são as informações de segurança pública</p>
+          <h1><b>Olá, Luiz Guilherme</b></h1>
+          <p>Estas são as informações de segurança pública.</p>
         </div>
 
         <div className="information-container">
           <div className="red box">
-            <span><b>Furtos</b></span>
+            <span className="box-title"><b>Furtos</b></span>
             <span>Total</span>
             <div>
-              <span>1896</span>
+              <span className="box-value"><b>1896</b></span>
             </div>
           </div>
 
           <div className="blue box">
-            <span><b>Agressões</b></span>
+            <span className="box-title"><b>Agressões</b></span>
             <span>Total</span>
             <div>
-              <span>568</span>
+              <span className="box-value"><b>568</b></span>
             </div>
           </div>
 
           <div className="green box">
-            <span><b>Roubos</b></span>
+            <span className="box-title"><b>Roubos</b></span>
             <span>Total</span>
             <div>
-              <span>139</span>
+              <span className="box-value"><b>139</b></span>
             </div>
           </div>
         </div>

@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import { ReportService } from '../../services/ReportService';
 import './Reports.css';
 import moment from 'moment';
+import EmojiPeople from '@material-ui/icons/EmojiPeople';
+import DirectionsCar from '@material-ui/icons/DirectionsCar';
 
 const Reports = () => {
   const [reports, setReports] = useState([]);
@@ -36,7 +38,7 @@ const Reports = () => {
             <td>{index + 1}</td>
             <td>Florianópolis - SC</td>
             <td>Rua Frei Caneca</td>
-            <td>{report.userType === 'PEDESTRIAN' ? 'Pedestre' : 'Motorista'}</td>
+            <td className="user-type-container">{report.userType === 'PEDESTRIAN' ? <><EmojiPeople /> <span className="user-type-label">Pedestre</span></> : <><DirectionsCar /> <span className="user-type-label">Motorista</span></>}</td>
             <td>{moment(report.when).format('L')}</td>
             <td>{moment(report.when).format('LT')}</td>
             <td><button>DETALHES</button></td>
