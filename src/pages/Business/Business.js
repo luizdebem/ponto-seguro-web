@@ -19,12 +19,18 @@ const Business = () => {
   const [openModal, setOpenModal] = useState(false);
   const [businessName, setBusinessName] = useState('');
   const [about, setAbout] = useState('');
+  const [city, setCity] = useState('');
+  const [bairro, setBairro] = useState('');
+  const [logradouro, setLogradouro] = useState('');
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
   const [businesses, setBusinesses] = useState([]);
 
   const showModal = () => setOpenModal(true);
-  const hideModal = () => setOpenModal(false);
+  const hideModal = () => {
+    setOpenModal(false);
+    clearForm();
+  }
 
   useEffect(() => {
     fetchBusinesses();
@@ -34,6 +40,14 @@ const Business = () => {
     const res = await BusinessService.getBusinesses();
     console.log(res.data.data);
     setBusinesses(res.data.data);
+  }
+
+  const clearForm = () => {
+    setBusinessName('');
+    setAbout('');
+    setCity('');
+    setBairro('');
+    setLogradouro('');
   }
 
   const handleSubmit = async (e) => {
@@ -68,28 +82,29 @@ const Business = () => {
         <div className="grid-4">
           <div className="company-form-input">
             <span>Nome da empresa</span>
-            <TextField onChange={(e) => setBusinessName(e.target.value)} id="outlined-basic" label="Ex: Ponto Seguro LTDA" variant="outlined" />
+            <TextField value={businessName} onChange={(e) => setBusinessName(e.target.value)} id="outlined-basic" label="Ex: Ponto Seguro LTDA" variant="outlined" />
           </div>
 
           <div className="company-form-input">
             <span>Cidade/Estado</span>
-            <TextField id="outlined-basic" label="Ex: Florianópolis/SC" variant="outlined" />
+            <TextField value={city} onChange={(e) => setCity(e.target.value)} id="outlined-basic" label="Ex: Florianópolis/SC" variant="outlined" />
           </div>
 
           <div className="company-form-input">
             <span>Bairro</span>
-            <TextField id="outlined-basic" label="Ex: Centro" variant="outlined" />
+            <TextField value={bairro} onChange={(e) => setBairro(e.target.value)} id="outlined-basic" label="Ex: Centro" variant="outlined" />
           </div>
 
           <div className="company-form-input">
             <span>Logradouro</span>
-            <TextField id="outlined-basic" label="Ex: Avenida Rio Branco, 1510" variant="outlined" />
+            <TextField value={logradouro} onChange={(e) => setLogradouro(e.target.value)} id="outlined-basic" label="Ex: Avenida Rio Branco, 1510" variant="outlined" />
           </div>
         </div>
 
         <div className="company-form-input">
           <span>Descreva sobre os pontos de segurança da empresa</span>
           <TextField
+            value={about}
             onChange={(e) => setAbout(e.target.value)}
             id="outlined-multiline-static"
             multiline
