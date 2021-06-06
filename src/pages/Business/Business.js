@@ -3,12 +3,35 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import './Business.css'
 import Modal from '../../components/Modal/Modal';
 import { TextField } from '@material-ui/core';
+import { BusinessService } from '../../services/BusinessService';
 
 const Business = () => {
   const [openModal, setOpenModal] = useState(false);
+  const [businessName, setBusinessName] = useState('');
+  const [about, setAbout] = useState('');
+  const [latitude, setLatitude] = useState(null);
+  const [longitude, setLongitude] = useState(null);
 
   const showModal = () => setOpenModal(true);
   const hideModal = () => setOpenModal(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const data = {
+      about,
+      name: businessName,
+      geolocation: {
+        latitude,
+        longitude
+      }
+    }
+
+    const res = await BusinessService.createBusiness(data);
+    if (res.status === 200) {
+      hideModal();
+    }
+  }
 
 
   return (
@@ -20,7 +43,7 @@ const Business = () => {
         <div className="grid-4">
           <div className="company-form-input">
             <span>Nome da empresa</span>
-            <TextField id="outlined-basic" label="Ex: Ponto Seguro LTDA" variant="outlined" />
+            <TextField onChange={(e) => setBusinessName(e.target.value)} id="outlined-basic" label="Ex: Ponto Seguro LTDA" variant="outlined" />
           </div>
 
           <div className="company-form-input">
@@ -42,6 +65,7 @@ const Business = () => {
         <div className="company-form-input">
           <span>Descreva sobre os pontos de segurança da empresa</span>
           <TextField
+            onChange={(e) => setAbout(e.target.value)}
             id="outlined-multiline-static"
             multiline
             placeholder="Coloque as informações de segurança da empresa"
@@ -52,18 +76,18 @@ const Business = () => {
 
         <div className="buttons">
           <button onClick={hideModal} className="cancel-btn">Cancelar</button>
-          <button className="add-btn">Adicionar selo</button>
+          <button onClick={handleSubmit} className="add-btn">Adicionar selo</button>
         </div>
-
-
       </Modal>
+
       <MapContainer center={[-27.5929705, -48.5556297]} zoom={14} scrollWheelZoom={true} tap={false}
         whenReady={(map) => {
           console.log(map);
           map.target.on("click", function (e) {
             const { lat, lng } = e.latlng;
+            setLatitude(lat);
+            setLongitude(lng);
             showModal();
-            console.log(lat, lng);
           });
         }}>
         <TileLayer
