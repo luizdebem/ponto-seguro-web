@@ -121,10 +121,8 @@ const Business = () => {
         />
         {businesses.length && businesses.map(business => (
           <Marker position={[business.geolocation.latitude, business.geolocation.longitude]} icon={CreateIcon()}>
-            <Popup>
-              A pretty CSS3 popup.
-              <br />
-              Easily customizable.
+            <Popup className="popup-business">
+              { business.name }
             </Popup>
           </Marker>
         ))}

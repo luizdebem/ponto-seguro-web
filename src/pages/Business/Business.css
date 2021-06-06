@@ -50,3 +50,7 @@
   font-size: 16px;
   margin-bottom: 32px;
 }
+
+.popup-business {
+  bottom: 20px !important;
+}
