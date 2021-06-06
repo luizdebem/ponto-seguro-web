@@ -1,9 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import L from 'leaflet';
 import './Business.css'
 import Modal from '../../components/Modal/Modal';
 import { TextField } from '@material-ui/core';
 import { BusinessService } from '../../services/BusinessService';
+import BusinessPin from '../../assets/business-pin.png'
+
+function CreateIcon() {
+  return L.icon({
+    iconUrl: BusinessPin
+  });
+}
 
 const Business = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -11,9 +19,20 @@ const Business = () => {
   const [about, setAbout] = useState('');
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
+  const [businesses, setBusinesses] = useState([]);
 
   const showModal = () => setOpenModal(true);
   const hideModal = () => setOpenModal(false);
+
+  useEffect(() => {
+    fetchBusinesses();
+  }, []);
+
+  const fetchBusinesses = async () => {
+    const res = await BusinessService.getBusinesses();
+    console.log(res.data.data);
+    setBusinesses(res.data.data);
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,6 +49,10 @@ const Business = () => {
     const res = await BusinessService.createBusiness(data);
     if (res.status === 200) {
       hideModal();
+      setBusinesses([
+        ...businesses,
+        data
+      ])
     }
   }
 
@@ -94,11 +117,15 @@ const Business = () => {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker position={[51.505, -0.09]}>
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-        </Popup>
-        </Marker>
+        {businesses.length && businesses.map(business => (
+          <Marker position={[business.geolocation.latitude, business.geolocation.longitude]} icon={CreateIcon()}>
+            <Popup>
+              A pretty CSS3 popup.
+              <br />
+              Easily customizable.
+            </Popup>
+          </Marker>
+        ))}
       </MapContainer>
 
     </>

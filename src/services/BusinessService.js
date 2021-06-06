@@ -9,6 +9,10 @@ export class BusinessService {
     'x-auth-token': process.env.REACT_APP_JWT_TOKEN,
   }
 
+  static getBusinesses() {
+    return axios.get(`${this.uri}/businesses`, { headers: this.headers });
+  }
+
   static createBusiness(business) {
     return axios.post(`${this.uri}/businesses`, business, { headers: this.headers });
   }
