@@ -9,7 +9,9 @@ import BusinessPin from '../../assets/business-pin.png'
 
 function CreateIcon() {
   return L.icon({
-    iconUrl: BusinessPin
+    iconUrl: BusinessPin,
+    iconSize: [32, 32],
+    iconAnchor: [16, 32]
   });
 }
 
